@@ -11,8 +11,13 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
+import MailIcon from '@material-ui/icons/Mail';
+import ForumIcon from '@material-ui/icons/Forum';
+import Profile from '@material-ui/icons/Person';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import LockIcon from '@material-ui/icons/Lock';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -67,10 +72,10 @@ function Layout(props) {
 			<div className={classes.toolbar} />
 			<Divider />
 			<List>
-				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+				{['Profile', 'Assessments', 'Interactions', 'Resources'].map((text, index) => (
 					<ListItem button key={text}>
 						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+							{text === 'Profile' ? <Profile /> : text === 'Interactions' ? <ForumIcon /> : text === 'Assessments' ? <AssessmentIcon /> : <MenuBookIcon />}
 						</ListItemIcon>
 						<ListItemText primary={text} />
 					</ListItem>
@@ -78,10 +83,10 @@ function Layout(props) {
 			</List>
 			<Divider />
 			<List>
-				{['All mail', 'Trash', 'Spam'].map((text, index) => (
+				{['Log In', 'Sign Up'].map((text, index) => (
 					<ListItem button key={text}>
 						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+							{text === 'Log In' ? <LockIcon /> : <MailIcon />}
 						</ListItemIcon>
 						<ListItemText primary={text} />
 					</ListItem>
@@ -108,7 +113,7 @@ function Layout(props) {
 						<MenuIcon />
 					</IconButton>
 					<Typography variant='h6' noWrap>
-						Responsive drawer
+						Welcome User
 					</Typography>
 				</Toolbar>
 			</AppBar>

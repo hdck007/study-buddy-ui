@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './pages/home';
+import Resources from './pages/resources';
 import Profile from './pages/profile';
-import About from './pages/about';
+import Interactions from './pages/interactions';
 
 function App() {
 	return (
 		<div className='App'>
 			<BrowserRouter>
 				<Switch>
-					<Route path='/' exact component={Home} />
-					<Route path='/about' exact component={About} />
-					<Route path='/profile' exact component={Profile} />
+					<Route path='/' exact component={Profile} />
+					<Route path='/interactions' exact component={Interactions} />
+					<Route path='/resources' exact component={Resources} />
 				</Switch>
 			</BrowserRouter>
 		</div>

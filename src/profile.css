@@ -1,13 +1,27 @@
 .container {
     height: 50vh;
-    width: 50vw;
+    width: 100%;
     background-color: gainsboro;
-    padding: 10px;
+    padding: 20px;
+    border: .2rem solid black;
+    position: relative;
+}
+
+.bg-img{
+    position: absolute;
+    width: 100%;
+    height: 55%;
+    /* background-color: black; */
+    margin-left: -20px;
+    margin-top: -20px;
+    /* z-index: -1; */
+    border-bottom: .1rem solid black;
 }
 
 .profile_pic {
-    width: 7rem;
-    height: 7rem;
+    margin-top: 3.6rem;
+    width: 9rem;
+    height: 9rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -16,11 +30,55 @@
     background-color: yellow;
 }
 
-#mentor_list {
-    float: right;
+#name{
+    font-size: 2.3rem;
+    font-weight: bold;
+    font-family: Stencil Std;
 }
 
-#wrapper {
-    display: flex;
-    flex-direction: row;
+#bio{
+    font-size: 1rem;
+    font-weight: 200;
+    font-family: Apple Chancery;
+}
+
+/* 
+#mentor_list {
+    float: right;
+} */
+
+.banner{
+    grid-area: banner;
+}
+
+.info{
+    grid-area: info;
+    border-right: .1rem solid black;
+}
+
+.list{
+    grid-area: list;
+}
+
+.gridcontainer{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows:  auto;
+    grid-template-areas: 
+    "banner banner"
+    "info list";
+}
+
+.about, #mentor_list, .skill_know, .skill_learn, .skill_assessed{
+    padding: 1rem;
+}
+
+.Chip{
+    margin: 7px;
+}
+
+.heading{
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
